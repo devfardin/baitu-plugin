@@ -44,13 +44,9 @@ class Elementor_single_photo_gallery extends \Elementor\Widget_Base
             <?php  if($query->have_posts()): ?>
                 <div class="container">
                     <?php while ( $query-> have_posts() ): $query->the_post(); ?>
-
-                    <?php $feature_image = get_the_post_thumbnail_url(null, 'extra_large')?>
-
+                        <?php $feature_image=get_the_post_thumbnail_url(null, 'extra_large')?>
                         <a href='<?php  echo $feature_image ?>' data-lightbox="example-set" class='item example-image-link'>
-
-                        <img src="<?php  echo $feature_image ?>" alt="">
-                        
+                        <img src="<?php  echo $feature_image ?>" alt="<?php echo get_the_title() ?>">            
                         </a>
                     <?php  endwhile; ?> <!-- Loop Photo Gallery Items -->
                     <?php  wp_reset_postdata(); ?>
