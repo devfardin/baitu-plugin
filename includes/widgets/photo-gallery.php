@@ -1,10 +1,10 @@
 <?php
-class Elementor_single_photo_gallery extends \Elementor\Widget_Base
+class Elementor_photo_gallery extends \Elementor\Widget_Base
 {
 
     public function get_name()
     {
-        return 'single_photo_gallery';
+        return 'photo_gallery';
     }
     public function get_title()
     {
@@ -54,7 +54,7 @@ class Elementor_single_photo_gallery extends \Elementor\Widget_Base
                
                 <!-- No Photo Gallery Message -->
                 <?php else: ?> 
-                    <div class='photo-gallery_empty_message'> 
+                    <div class='empty_message'> 
                         <p> No photos to display at the moment </p>
                     </div>
             <?php endif; ?>

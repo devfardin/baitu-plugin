@@ -24,6 +24,7 @@ require_once( __DIR__ . '/includes/shortcodes/latest-posts.php');
 function render_style(){
     wp_register_style( 'latest_posts_style', BAITU_ASSETS_URI .'css/latest-posts.css');
     wp_register_style( 'phot_gallery_style', BAITU_ASSETS_URI .'css/photo-gallery.css');
+    wp_register_style( 'pricing_plan_style', BAITU_ASSETS_URI .'css/pricing-plan.css');
 
 }
 add_action( 'wp_enqueue_scripts', 'render_style' );
@@ -33,7 +34,11 @@ add_action( 'wp_enqueue_scripts', 'render_style' );
 function baitu_elementor_widget($widgets_manager){
 
     require_once(__DIR__ . '/includes/widgets/photo-gallery.php');
+    require_once(__DIR__ . '/includes/widgets/show-packages.php');
+    require_once(__DIR__ . '/includes/widgets/single-post.php');
     
-	$widgets_manager->register(new \Elementor_single_photo_gallery());
+	$widgets_manager->register(new \Elementor_photo_gallery());
+	$widgets_manager->register(new \Elementor_show_packages_plan());
+	$widgets_manager->register(new \Elementor_single_post());
 }
 add_action("elementor/widgets/register","baitu_elementor_widget" );

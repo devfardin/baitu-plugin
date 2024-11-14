@@ -1,0 +1,115 @@
+.pricing_plan_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .pricing_plan_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .pricing_plan_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.pricing_plan_item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-right-radius: 7px !important;
+  border-top-left-radius: 7px !important;
+}
+.pricing_plan__meta {
+  padding: 15px;
+  background:white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.pricing_plan__top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 425px) {
+  .pricing_plan__top {
+    flex-direction: row;
+  }
+}
+.top_meta_left_item h2 {
+  font-size: 18px;
+  color: #212529;
+  font-family: inter;
+  font-weight: 400;
+  padding: 0;
+  margin: 5px;
+}
+.top_meta_left_item span {
+  font-weight: 600;
+}
+.top_meta_right_item h2 {
+  font-size: 18px;
+  color: #212529;
+  font-family: inter;
+  font-weight: 400;
+  padding: 0;
+  margin: 5px;
+}
+.top_meta_right_item h2 span {
+  background: #fcddb9;
+  border: 1px solid #e49841;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  display: block;
+}
+.pricing_plan__title {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: inter;
+  color: #212529;
+  padding: 15px 0;
+}
+.pricing_plan__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width:425px) {
+  .pricing_plan__footer {
+    flex-direction: row;
+  }
+}
+.pricing_plan__footer .phone_number {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inter;
+  color: #212529;
+  transition: all 0.3s;
+}
+.pricing_plan__footer .phone_number:hover{
+    color: var(--e-global-color-primary);
+}
+.pricing_plan__details {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  color: white;
+  background-color: var(--e-global-color-primary);
+  border-radius: 5px;
+  padding: 10px 30px;
+  transition: all 0.3s;
+}
+.pricing_plan__details:hover {
+  background: red;
+  color: white;
+}
