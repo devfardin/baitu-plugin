@@ -5,7 +5,7 @@ class Elementor_single_post extends \Elementor\Widget_Base {
         return 'single_post';
     }
     public function get_title() {
-        return esc_html__( 'single_post', 'tri' );
+        return esc_html__( 'single_post', 'baitu' );
     }
     public function get_icon() {
         return 'eicon-post-list';
@@ -14,14 +14,14 @@ class Elementor_single_post extends \Elementor\Widget_Base {
         return [ 'basic' ];
     }
     public function get_keywords() {
-        return [ 'single_post','tri' ];
+        return [ 'single_post','baitu' ];
     }
     protected function register_controls() {
 
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'single_post', 'tri' ),
+                'label' => esc_html__( 'single_post', 'baitu' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );

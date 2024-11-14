@@ -36,9 +36,11 @@ function baitu_elementor_widget($widgets_manager){
     require_once(__DIR__ . '/includes/widgets/photo-gallery.php');
     require_once(__DIR__ . '/includes/widgets/show-packages.php');
     require_once(__DIR__ . '/includes/widgets/single-post.php');
+    require_once(__DIR__ . '/includes/widgets/single-pricing-plan.php');
     
 	$widgets_manager->register(new \Elementor_photo_gallery());
 	$widgets_manager->register(new \Elementor_show_packages_plan());
 	$widgets_manager->register(new \Elementor_single_post());
+	$widgets_manager->register(new \Elementor_single_pricing_plan());
 }
 add_action("elementor/widgets/register","baitu_elementor_widget" );
