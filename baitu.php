@@ -20,6 +20,30 @@ define ( 'BAITU_VERSION', '1.0.0' );
 // Home Latest post shortcode
 require_once( __DIR__ . '/includes/shortcodes/latest-posts.php');
 
+// admin menu 
+require_once(__DIR__ . '/includes/admin-menu/admin-menu.php');
+
+// Check if CMB2 is already loaded
+if (!class_exists('CMB2_Bootstrap_270')) {
+    // Try loading CMB2 from the bundled version
+    if (file_exists(plugin_dir_path(__FILE__) . 'includes/cmb2/init.php')) {
+        require_once plugin_dir_path(__FILE__) . 'includes/cmb2/init.php';
+    } else {
+        // Show admin notice if CMB2 is missing
+        add_action('admin_notices', 'baitu_cmb2_missing_notice');
+    }
+}
+/**
+ * Show admin notice if CMB2 is missing.
+ */
+function baitu_cmb2_missing_notice() {
+    echo '<div class="notice notice-error"><p>';
+    echo '<strong>Baitu Plugin:</strong> CMB2 library is required for this plugin to function. ';
+    echo 'Please install and activate the <a href="https://wordpress.org/plugins/cmb2/" target="_blank">CMB2 plugin</a>, ';
+    echo 'or ensure the bundled CMB2 library is correctly installed.';
+    echo '</p></div>';
+}
+
 // Register all css file
 function render_style(){
     wp_register_style( 'latest_posts_style', BAITU_ASSETS_URI .'css/latest-posts.css');
@@ -44,3 +68,4 @@ function baitu_elementor_widget($widgets_manager){
 	$widgets_manager->register(new \Elementor_single_pricing_plan());
 }
 add_action("elementor/widgets/register","baitu_elementor_widget" );
+
