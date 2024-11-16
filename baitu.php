@@ -19,6 +19,7 @@ define ( 'BAITU_VERSION', '1.0.0' );
 
 // Home Latest post shortcode
 require_once( __DIR__ . '/includes/shortcodes/latest-posts.php');
+require_once( __DIR__ . '/includes/shortcodes/notices.php');
 
 // admin menu 
 require_once(__DIR__ . '/includes/admin-menu/admin-menu.php');
@@ -49,6 +50,7 @@ function render_style(){
     wp_register_style( 'latest_posts_style', BAITU_ASSETS_URI .'css/latest-posts.css');
     wp_register_style( 'phot_gallery_style', BAITU_ASSETS_URI .'css/photo-gallery.css');
     wp_register_style( 'pricing_plan_style', BAITU_ASSETS_URI .'css/pricing-plan.css');
+    wp_register_style('notices_slider_custome', BAITU_ASSETS_URI . 'css/notice-slider-style.css');
 
 }
 add_action( 'wp_enqueue_scripts', 'render_style' );
