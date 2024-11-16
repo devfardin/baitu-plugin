@@ -3,7 +3,7 @@
  * Plugin Name: Baitu
  * Plugin URI: https://github.com/devfardin
  * Description: Enhance your website’s functionality with Baitu Plugin – a lightweight, easy-to-use tool designed to add custom features and extend your site's capabilities seamlessly. 
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Fardin
  * Author URI: https://github.com/devfardin
  * Text Domain: baitu
@@ -21,9 +21,6 @@ define ( 'BAITU_VERSION', '1.0.0' );
 require_once( __DIR__ . '/includes/shortcodes/latest-posts.php');
 require_once( __DIR__ . '/includes/shortcodes/notices.php');
 
-// admin menu 
-require_once(__DIR__ . '/includes/admin-menu/admin-menu.php');
-
 // Check if CMB2 is already loaded
 if (!class_exists('CMB2_Bootstrap_270')) {
     // Try loading CMB2 from the bundled version
@@ -34,6 +31,11 @@ if (!class_exists('CMB2_Bootstrap_270')) {
         add_action('admin_notices', 'baitu_cmb2_missing_notice');
     }
 }
+
+// admin menu 
+//require_once(__DIR__ . '/includes/admin-menu/admin-menu.php');
+require_once(__DIR__ . '/includes/notices-settings.php');
+
 /**
  * Show admin notice if CMB2 is missing.
  */
