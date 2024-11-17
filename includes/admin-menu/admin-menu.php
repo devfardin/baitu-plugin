@@ -46,5 +46,4 @@ function baitu_register_notice_form()
         'type' => 'file',
     ));
     return $cmb;
-
 }
