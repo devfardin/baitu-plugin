@@ -6,6 +6,14 @@ function rander_notices_slider()
     wp_enqueue_style('notices_slider_custome');
     ?>
     <?php if (!empty($notices)): ?>
+        <div class="notice_marquee_wrap">
+            <div class="notice_marquee_title">
+                <h1>Notice/ Notice:</h1>
+            </div>
+            <div class="notice_marquee_desc">
+                <marquee><?php echo $notices['notice_marquee'] ?></marquee>
+            </div>
+        </div>
         <div class="swiper notices_slider">
             <div class="swiper-wrapper">
                 <?php foreach ($notices['baitu_notice_group'] as $index => $notice): ?>

@@ -85,6 +85,33 @@ function baitu_register_notice_form()
             'sortable'      => true,
         ),
     ));
+
+    // Check if there are saved notices
+    if (!empty($notices)) {
+        foreach ($notices as $index => $notice) {
+            // Add Title field
+            $cmb->add_group_field($group_field_id, array(
+                'name'    => 'Title',
+                'id'      => "notice_title", // Ensure unique IDs
+                'type'    => 'text',
+                'default' => $notice['notice_title'] ?? '', // Default to saved title
+            ));
+            // Add Description field
+            $cmb->add_group_field($group_field_id, array(
+                'name'    => 'Description',
+                'id'      => "notice_description", // Ensure unique IDs
+                'type'    => 'textarea',
+                'default' => $notice['notice_description'] ?? '', // Default to saved description
+            ));
+            // Add Image field
+            $cmb->add_group_field($group_field_id, array(
+                'name'    => 'Image',
+                'id'      => "notice_image", // Ensure unique IDs
+                'type'    => 'file',
+                'default' => $notice['notice_image'] ?? '', // Default to saved image URL
+            ));
+        }
+    } else {
         // Add default fields for new notices
         $cmb->add_group_field($group_field_id, array(
             'name' => 'Title',
@@ -104,6 +131,7 @@ function baitu_register_notice_form()
     }
 
     return $cmb;
+}
 
 /*
  * Register the settings for saving notice options.
