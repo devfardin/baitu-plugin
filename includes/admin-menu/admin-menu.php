@@ -24,6 +24,32 @@ function baitu_register_notice_form()
         'type' => 'textarea_small',
     ));
 
+    // Add Button label 1
+    $cmb->add_field(array(
+        'name' => 'Button Label 1',
+        'id' => 'button_lebel_1',
+        'type' => 'Text',
+    ));
+    // Add Button url 1
+    $cmb->add_field(array(
+        'name' => 'Button Url 1',
+        'id' => 'button_url_1',
+        'type' => 'text_url',
+    ));
+
+    // Add Button label 2
+    $cmb->add_field(array(
+        'name' => 'Button Label 2',
+        'id' => 'button_lebel_2',
+        'type' => 'Text',
+    ));
+      // Add Button url 2
+      $cmb->add_field(array(
+        'name' => 'Button Url 1',
+        'id' => 'button_url_2',
+        'type' => 'text_url',
+    ));
+
     // Add Group Field for Notices
     $group_field_id = $cmb->add_field(array(
         'id' => 'baitu_notice_group',

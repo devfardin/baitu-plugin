@@ -22,6 +22,10 @@ function rander_notices_slider()
                         <div class="notices_slider_inner">
                             <h1><?php echo $notice['notice_description'] ?></h1>
                         </div>
+                        <div class="notices_button_wrap">
+                        <a href="<?php echo $notices['button_url_1'] ?>"><?php echo $notices['button_lebel_1']?></a>
+                        <a href="<?php echo $notices['button_url_2'] ?>"><?php echo $notices['button_lebel_2']?></a>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
